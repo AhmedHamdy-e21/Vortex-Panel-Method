@@ -28,6 +28,5 @@ Gamma= CalculateCirculationForField(numOfPoints,r,X,Y,Vx,Vy,x0,y0)
 
 
 
-quiver(XX,YY,Vx,Vy,'r-','AutoScale','off');   
 
 

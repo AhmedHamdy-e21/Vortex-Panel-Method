@@ -56,13 +56,14 @@ step=0.01;
 r=1;
 x0=0;
 y0=0;
-numOfPoints=1000;                         %% resolution of points 
+numOfPoints=20;                         %% resolution of points 
 
 [U,X,Y]=GetMatrixOfN(u,x,y,N);
 [V,X,Y]=GetMatrixOfN(v,x,y,N);
 
-
-Gamma= CalculateCirculationForField(numOfPoints,r,X,Y,V,U,x0,y0)
+% U=zeros(N,N);
+% V=zeros(N,N);
+Gamma= CalculateCirculationForField(numOfPoints,r,X,Y,V,U,x0,y0,N)
 
 
 
