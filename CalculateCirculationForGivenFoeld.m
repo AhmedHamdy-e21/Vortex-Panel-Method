@@ -27,7 +27,8 @@ alternate= quadl(@(t) eval(vectorize(integrand)),0,1);               %% lobatto 
 %%
 % Polar parametrization
 
-
+clear;
+clc;
 syms x y  theta r                                                   %% Define the independant variables
 
 u=y/((x^2)+(y^2));                                                  %% the given velocity field in the u direction
@@ -44,9 +45,24 @@ realdot=@(u,v) u*transpose(v);                                      %% Dot produ
 
 integrand=realdot(Gpar,diff(unitcircle,theta));                     %% integrand
 
-integral=-int(integrand,t,0,2*pi)    ;                               %% the value of circulation ^_^, be careful of the negative sign, it's conventional in circulation to take it CW
+integral=-int(integrand,theta,0,2*pi);                                  %% the value of circulation ^_^, be careful of the negative sign, it's conventional in circulation to take it CW
 
 
-N=5;
-V=GetMatrixOfN(u,x,y,N)
+
+N=10;
+step=0.01;
+
+
+r=1;
+x0=0;
+y0=0;
+numOfPoints=200;                         %% resolution of points 
+
+[U,X,Y]=GetMatrixOfN(u,x,y,N);
+[V,X,Y]=GetMatrixOfN(v,x,y,N);
+
+
+Gamma= CalculateCirculationForField(numOfPoints,r,X,Y,V,U,x0,y0)
+
+
 
