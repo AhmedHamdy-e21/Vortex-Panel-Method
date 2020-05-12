@@ -49,14 +49,14 @@ integral=-int(integrand,theta,0,2*pi);                                  %% the v
 
 
 
-N=10;
+N=20;
 step=0.01;
 
 
 r=1;
 x0=0;
 y0=0;
-numOfPoints=200;                         %% resolution of points 
+numOfPoints=1000;                         %% resolution of points 
 
 [U,X,Y]=GetMatrixOfN(u,x,y,N);
 [V,X,Y]=GetMatrixOfN(v,x,y,N);

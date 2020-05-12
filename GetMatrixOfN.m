@@ -2,9 +2,9 @@ function [VMatrix,X,Y] = GetMatrixOfN(V,x,y,N)
 %UNTITLED2 Summary of this function goes here
 %   Detailed explanation goes here
 
-X=linspace(1,N-1,N)';
-Y=linspace(1,N-1,N)';
-disp(X(1))
+X=linspace(-N,N-1,N)';
+Y=linspace(-N,N-1,N)';
+
 VMatrix=zeros(N,N);
 for i=1:N
     
