@@ -47,6 +47,24 @@ integrand=realdot(Gpar,diff(unitcircle,theta));                     %% integrand
 integral=-int(integrand,t,0,2*pi)    ;                               %% the value of circulation ^_^, be careful of the negative sign, it's conventional in circulation to take it CW
 
 
+
+%%
+%getting field out of the velocity vectors and evaluate them numerically
+%(for a discrete ppoin)
+clear; 
+
 N=5;
-V=GetMatrixOfN(u,x,y,N)
+u=y/((x^2)+(y^2));                                                  %% the given velocity field in the u direction
+
+v=-x/((x^2)+(y^2));                                                 %% the given velocity field in the v direction
+
+[X,Y,Vx]=GetMatrixOfN(u,x,y,N);
+[X,Y,Vy]=GetMatrixOfN(v,x,y,N);
+
+Points=5;
+
+
+r=2;
+G=CalculateCirculationForField(Points,r,X,Y,Vx,Vy);
+
 
